@@ -1,3 +1,7 @@
 <?php
 require 'vendor/autoload.php';
-echo "hello";
+
+use SepRefund\Decimal;
+
+$dec = new Decimal(21312.123);
+echo $dec->__toString();
