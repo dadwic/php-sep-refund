@@ -1,0 +1,14 @@
+# config.yml
+# Linux Users: PHP Namespaces use back slash \ rather than a forward slash /
+# So for destinations_php, the namespace would be TestNs\MyApp
+# $ vendor/bin/xsd2php convert config.yml sepxml/srvRefund0.xsd
+
+xsd2php:
+  namespaces:
+    'http://tempuri.org/': 'SepRefund'
+    'http://schemas.datacontract.org/2004/07/Refund.DTO': 'SepRefund'
+    'http://schemas.microsoft.com/2003/10/Serialization/': 'SepRefund'
+  destinations_php:
+    'SepRefund': src
+  destinations_jms:
+    'SepRefund': src/metadata

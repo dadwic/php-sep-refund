@@ -1,0 +1,44 @@
+SepRefund\GetDailyRefundList:
+    xml_root_name: GetDailyRefundList
+    xml_root_namespace: 'http://tempuri.org/'
+    properties:
+        userName:
+            expose: true
+            access_type: public_method
+            serialized_name: userName
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getUserName
+                setter: setUserName
+            type: string
+        password:
+            expose: true
+            access_type: public_method
+            serialized_name: password
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getPassword
+                setter: setPassword
+            type: string
+        termId:
+            expose: true
+            access_type: public_method
+            serialized_name: termId
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getTermId
+                setter: setTermId
+            type: integer
+        date:
+            expose: true
+            access_type: public_method
+            serialized_name: date
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getDate
+                setter: setDate
+            type: GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime

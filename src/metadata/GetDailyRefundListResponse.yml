@@ -1,0 +1,14 @@
+SepRefund\GetDailyRefundListResponse:
+    xml_root_name: GetDailyRefundListResponse
+    xml_root_namespace: 'http://tempuri.org/'
+    properties:
+        getDailyRefundListResult:
+            expose: true
+            access_type: public_method
+            serialized_name: GetDailyRefundListResult
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getGetDailyRefundListResult
+                setter: setGetDailyRefundListResult
+            type: SepRefund\ResponseModelType

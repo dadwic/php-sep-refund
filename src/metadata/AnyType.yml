@@ -1,0 +1,12 @@
+SepRefund\AnyType:
+    xml_root_name: anyType
+    xml_root_namespace: 'http://schemas.microsoft.com/2003/10/Serialization/'
+    properties:
+        __value:
+            expose: true
+            xml_value: true
+            access_type: public_method
+            accessor:
+                getter: value
+                setter: value
+            type: \AnyType

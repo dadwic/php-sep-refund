@@ -1,0 +1,14 @@
+SepRefund\GetModifiedRefundListResponse:
+    xml_root_name: GetModifiedRefundListResponse
+    xml_root_namespace: 'http://tempuri.org/'
+    properties:
+        getModifiedRefundListResult:
+            expose: true
+            access_type: public_method
+            serialized_name: GetModifiedRefundListResult
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getGetModifiedRefundListResult
+                setter: setGetModifiedRefundListResult
+            type: SepRefund\ResponseModelType

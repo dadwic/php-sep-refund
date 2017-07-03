@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="SepRefundService" soapui-version="5.0.0-m-SNAPSHOT" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="BasicHttpBinding_IsrvRefund" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IsrvRefund" soapVersion="1_1" anonymous="optional" definition="https://srtm.sep.ir/RefundService/srvRefund.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://srtm.sep.ir/RefundService/srvRefund.svc?wsdl"><con:part><con:url>https://srtm.sep.ir/RefundService/srvRefund.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="srvRefund" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IsrvRefund_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false"/>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256/>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict/>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://srtm.sep.ir/RefundService/srvRefund.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="https://srtm.sep.ir/RefundService/srvRefund.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="https://srtm.sep.ir/RefundService/srvRefund.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Refund.DTO"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IsrvRefund_Refund_Reg_InputMessage">
+    <wsdl:part name="parameters" element="tns:Refund_Reg"/>
+  </wsdl:message>
+  <wsdl:message name="IsrvRefund_Refund_Reg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Refund_RegResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsrvRefund_Refund_Exec_InputMessage">
+    <wsdl:part name="parameters" element="tns:Refund_Exec"/>
+  </wsdl:message>
+  <wsdl:message name="IsrvRefund_Refund_Exec_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Refund_ExecResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsrvRefund_GetDailyRefundList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDailyRefundList"/>
+  </wsdl:message>
+  <wsdl:message name="IsrvRefund_GetDailyRefundList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDailyRefundListResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsrvRefund_GetRefundStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRefundStatus"/>
+  </wsdl:message>
+  <wsdl:message name="IsrvRefund_GetRefundStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRefundStatusResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsrvRefund_GetModifiedRefundList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModifiedRefundList"/>
+  </wsdl:message>
+  <wsdl:message name="IsrvRefund_GetModifiedRefundList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModifiedRefundListResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IsrvRefund_GetRefundDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRefundDetail"/>
+  </wsdl:message>
+  <wsdl:message name="IsrvRefund_GetRefundDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRefundDetailResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IsrvRefund">
+    <wsdl:operation name="Refund_Reg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IsrvRefund/Refund_Reg" message="tns:IsrvRefund_Refund_Reg_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IsrvRefund/Refund_RegResponse" message="tns:IsrvRefund_Refund_Reg_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="Refund_Exec">
+      <wsdl:input wsaw:Action="http://tempuri.org/IsrvRefund/Refund_Exec" message="tns:IsrvRefund_Refund_Exec_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IsrvRefund/Refund_ExecResponse" message="tns:IsrvRefund_Refund_Exec_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetDailyRefundList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IsrvRefund/GetDailyRefundList" message="tns:IsrvRefund_GetDailyRefundList_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IsrvRefund/GetDailyRefundListResponse" message="tns:IsrvRefund_GetDailyRefundList_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetRefundStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IsrvRefund/GetRefundStatus" message="tns:IsrvRefund_GetRefundStatus_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IsrvRefund/GetRefundStatusResponse" message="tns:IsrvRefund_GetRefundStatus_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetModifiedRefundList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IsrvRefund/GetModifiedRefundList" message="tns:IsrvRefund_GetModifiedRefundList_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IsrvRefund/GetModifiedRefundListResponse" message="tns:IsrvRefund_GetModifiedRefundList_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetRefundDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IsrvRefund/GetRefundDetail" message="tns:IsrvRefund_GetRefundDetail_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IsrvRefund/GetRefundDetailResponse" message="tns:IsrvRefund_GetRefundDetail_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IsrvRefund" type="tns:IsrvRefund">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IsrvRefund_policy"/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Refund_Reg">
+      <soap:operation soapAction="http://tempuri.org/IsrvRefund/Refund_Reg" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Refund_Exec">
+      <soap:operation soapAction="http://tempuri.org/IsrvRefund/Refund_Exec" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDailyRefundList">
+      <soap:operation soapAction="http://tempuri.org/IsrvRefund/GetDailyRefundList" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRefundStatus">
+      <soap:operation soapAction="http://tempuri.org/IsrvRefund/GetRefundStatus" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModifiedRefundList">
+      <soap:operation soapAction="http://tempuri.org/IsrvRefund/GetModifiedRefundList" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRefundDetail">
+      <soap:operation soapAction="http://tempuri.org/IsrvRefund/GetRefundDetail" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="srvRefund">
+    <wsdl:port name="BasicHttpBinding_IsrvRefund" binding="tns:BasicHttpBinding_IsrvRefund">
+      <soap:address location="https://srtm.sep.ir/RefundService/srvRefund.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://srtm.sep.ir/RefundService/srvRefund.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="https://srtm.sep.ir/RefundService/srvRefund.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Refund.DTO"/>
+  <xs:element name="Refund_Reg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="refNum" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="resNum" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="transactionTermId" type="xs:long"/>
+        <xs:element minOccurs="0" name="refundTermId" type="xs:long"/>
+        <xs:element minOccurs="0" name="amount" type="xs:long"/>
+        <xs:element minOccurs="0" name="requestId" type="xs:long"/>
+        <xs:element minOccurs="0" name="exeTime" type="xs:int"/>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="cellNumber" nillable="true" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Refund_RegResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Refund_RegResult" nillable="true" type="q1:ResponseModel" xmlns:q1="http://schemas.datacontract.org/2004/07/Refund.DTO"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Refund_Exec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="partialRefundId" type="xs:long"/>
+        <xs:element minOccurs="0" name="typRefundAction" type="q2:typeRefundAction" xmlns:q2="http://schemas.datacontract.org/2004/07/Refund.DTO"/>
+        <xs:element minOccurs="0" name="termId" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Refund_ExecResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Refund_ExecResult" nillable="true" type="q3:ResponseModel" xmlns:q3="http://schemas.datacontract.org/2004/07/Refund.DTO"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDailyRefundList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="termId" type="xs:long"/>
+        <xs:element minOccurs="0" name="date" nillable="true" type="xs:dateTime"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDailyRefundListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDailyRefundListResult" nillable="true" type="q4:ResponseModel" xmlns:q4="http://schemas.datacontract.org/2004/07/Refund.DTO"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRefundStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="refundId" type="xs:long"/>
+        <xs:element minOccurs="0" name="termId" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRefundStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRefundStatusResult" nillable="true" type="q5:ResponseModel" xmlns:q5="http://schemas.datacontract.org/2004/07/Refund.DTO"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModifiedRefundList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="termId" type="xs:long"/>
+        <xs:element minOccurs="0" name="date" nillable="true" type="xs:dateTime"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetModifiedRefundListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetModifiedRefundListResult" nillable="true" type="q6:ResponseModel" xmlns:q6="http://schemas.datacontract.org/2004/07/Refund.DTO"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRefundDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="refundId" type="xs:long"/>
+        <xs:element minOccurs="0" name="termId" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRefundDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRefundDetailResult" nillable="true" type="q7:ResponseModel" xmlns:q7="http://schemas.datacontract.org/2004/07/Refund.DTO"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://srtm.sep.ir/RefundService/srvRefund.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Refund.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/Refund.DTO">
+  <xs:import schemaLocation="https://srtm.sep.ir/RefundService/srvRefund.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:complexType name="ResponseModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ErrorCode" type="tns:ErrCode"/>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ReferenceId" type="xs:long"/>
+      <xs:element minOccurs="0" name="RequestStatus" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseModel" nillable="true" type="tns:ResponseModel"/>
+  <xs:simpleType name="ErrCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="InvalidParameter">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AuthenticateUserFail">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Success">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DuplicateRequest"/>
+      <xs:enumeration value="OriginalAmountIncorrect"/>
+      <xs:enumeration value="ObjectNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TransactionStateisFinal">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CardExists">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CardNotFound">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Fatal">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WrongStateForDelete">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TxnIsProcessing">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ErrCode" nillable="true" type="tns:ErrCode"/>
+  <xs:simpleType name="typeRefundAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="Approve"/>
+      <xs:enumeration value="Cancel"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="typeRefundAction" nillable="true" type="tns:typeRefundAction"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://srtm.sep.ir/RefundService/srvRefund.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://srtm.sep.ir/RefundService/srvRefund.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://tempuri.org/IsrvRefund/GetDailyRefundList" name="GetDailyRefundList" bindingOperationName="GetDailyRefundList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://srtm.sep.ir/RefundService/srvRefund.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetDailyRefundList>
+         <!--Optional:-->
+         <tem:userName>?</tem:userName>
+         <!--Optional:-->
+         <tem:password>?</tem:password>
+         <!--Optional:-->
+         <tem:termId>?</tem:termId>
+         <!--Optional:-->
+         <tem:date>?</tem:date>
+      </tem:GetDailyRefundList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IsrvRefund/GetDailyRefundList"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/IsrvRefund/GetModifiedRefundList" name="GetModifiedRefundList" bindingOperationName="GetModifiedRefundList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://srtm.sep.ir/RefundService/srvRefund.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetModifiedRefundList>
+         <!--Optional:-->
+         <tem:userName>?</tem:userName>
+         <!--Optional:-->
+         <tem:password>?</tem:password>
+         <!--Optional:-->
+         <tem:termId>?</tem:termId>
+         <!--Optional:-->
+         <tem:date>?</tem:date>
+      </tem:GetModifiedRefundList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IsrvRefund/GetModifiedRefundList"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/IsrvRefund/GetRefundDetail" name="GetRefundDetail" bindingOperationName="GetRefundDetail" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://srtm.sep.ir/RefundService/srvRefund.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetRefundDetail>
+         <!--Optional:-->
+         <tem:userName>?</tem:userName>
+         <!--Optional:-->
+         <tem:password>?</tem:password>
+         <!--Optional:-->
+         <tem:refundId>?</tem:refundId>
+         <!--Optional:-->
+         <tem:termId>?</tem:termId>
+      </tem:GetRefundDetail>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IsrvRefund/GetRefundDetail"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/IsrvRefund/GetRefundStatus" name="GetRefundStatus" bindingOperationName="GetRefundStatus" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://srtm.sep.ir/RefundService/srvRefund.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetRefundStatus>
+         <!--Optional:-->
+         <tem:userName>?</tem:userName>
+         <!--Optional:-->
+         <tem:password>?</tem:password>
+         <!--Optional:-->
+         <tem:refundId>?</tem:refundId>
+         <!--Optional:-->
+         <tem:termId>?</tem:termId>
+      </tem:GetRefundStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IsrvRefund/GetRefundStatus"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/IsrvRefund/Refund_Exec" name="Refund_Exec" bindingOperationName="Refund_Exec" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://srtm.sep.ir/RefundService/srvRefund.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Refund_Exec>
+         <!--Optional:-->
+         <tem:userName>?</tem:userName>
+         <!--Optional:-->
+         <tem:password>?</tem:password>
+         <!--Optional:-->
+         <tem:partialRefundId>?</tem:partialRefundId>
+         <!--Optional:-->
+         <tem:typRefundAction>?</tem:typRefundAction>
+         <!--Optional:-->
+         <tem:termId>?</tem:termId>
+      </tem:Refund_Exec>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IsrvRefund/Refund_Exec"/></con:call></con:operation><con:operation isOneWay="false" action="http://tempuri.org/IsrvRefund/Refund_Reg" name="Refund_Reg" bindingOperationName="Refund_Reg" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://srtm.sep.ir/RefundService/srvRefund.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body><tem:Refund_Reg>
+         <!--Optional:-->
+         <tem:userName>ewf</tem:userName>
+         <!--Optional:-->
+         <tem:password>wef</tem:password>
+         <!--Optional:-->
+         <tem:refNum>?</tem:refNum>
+         <!--Optional:-->
+         <tem:resNum>?</tem:resNum>
+         <!--Optional:-->
+         <tem:transactionTermId>?</tem:transactionTermId>
+         <!--Optional:-->
+         <tem:refundTermId>?</tem:refundTermId>
+         <!--Optional:-->
+         <tem:amount>?</tem:amount>
+         <!--Optional:-->
+         <tem:requestId>?</tem:requestId>
+         <!--Optional:-->
+         <tem:exeTime>?</tem:exeTime>
+         <!--Optional:-->
+         <tem:email>?</tem:email>
+         <!--Optional:-->
+         <tem:cellNumber>?</tem:cellNumber>
+      </tem:Refund_Reg>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IsrvRefund/Refund_Reg"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="BasicHttpBinding_IsrvRefund TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetDailyRefundList TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="GetDailyRefundList"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpBinding_IsrvRefund</con:interface><con:operation>GetDailyRefundList</con:operation><con:request name="GetDailyRefundList"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://srtm.sep.ir/RefundService/srvRefund.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetDailyRefundList>
+         <!--Optional:-->
+         <tem:userName>?</tem:userName>
+         <!--Optional:-->
+         <tem:password>?</tem:password>
+         <!--Optional:-->
+         <tem:termId>?</tem:termId>
+         <!--Optional:-->
+         <tem:date>?</tem:date>
+      </tem:GetDailyRefundList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/IsrvRefund/GetDailyRefundList"/></con:request></con:config></con:testStep><con:testStep type="mockresponse" name="Refund_Reg"><con:settings/><con:config xsi:type="con:MockResponseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpBinding_IsrvRefund</con:interface><con:operation>Refund_Reg</con:operation><con:path>/Refund_Reg</con:path><con:port>8181</con:port><con:response><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+   <s:Body>
+      <s:Fault>
+         <faultcode xmlns:a="http://schemas.microsoft.com/net/2005/12/windowscommunicationfoundation/dispatcher">a:DeserializationFailed</faultcode>
+         <faultstring xml:lang="en-US">The formatter threw an exception while trying to deserialize the message: There was an error while trying to deserialize parameter http://tempuri.org/:transactionTermId. The InnerException message was 'There was an error deserializing the object of type System.Int64. The value '?' cannot be parsed as the type 'Int64'.'.  Please see InnerException for more details.</faultstring>
+         <detail>
+            <ExceptionDetail xmlns="http://schemas.datacontract.org/2004/07/System.ServiceModel" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+               <HelpLink i:nil="true"/>
+               <InnerException>
+                  <HelpLink i:nil="true"/>
+                  <InnerException>
+                     <HelpLink i:nil="true"/>
+                     <InnerException>
+                        <HelpLink i:nil="true"/>
+                        <InnerException i:nil="true"/>
+                        <Message>Input string was not in a correct format.</Message>
+                        <StackTrace>at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer&amp; number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt64(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Int64.Parse(String s, NumberStyles style, IFormatProvider provider)
+   at System.Xml.XmlConvert.ToInt64(String s)
+   at System.Xml.XmlConverter.ToInt64(String value)</StackTrace>
+                        <Type>System.FormatException</Type>
+                     </InnerException>
+                     <Message>The value '?' cannot be parsed as the type 'Int64'.</Message>
+                     <StackTrace>at System.Xml.XmlConverter.ToInt64(String value)
+   at System.Xml.XmlConverter.ToInt64(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Xml.ValueHandle.ToLong()
+   at System.Xml.XmlBaseReader.ReadContentAsLong()
+   at System.Xml.XmlDictionaryReader.ReadElementContentAsLong()
+   at System.Runtime.Serialization.XmlReaderDelegator.ReadElementContentAsLong()
+   at System.Runtime.Serialization.LongDataContract.ReadXmlValue(XmlReaderDelegator reader, XmlObjectSerializerReadContext context)
+   at System.Runtime.Serialization.DataContractSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)</StackTrace>
+                     <Type>System.Xml.XmlException</Type>
+                  </InnerException>
+                  <Message>There was an error deserializing the object of type System.Int64. The value '?' cannot be parsed as the type 'Int64'.</Message>
+                  <StackTrace>at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)
+   at System.Runtime.Serialization.DataContractSerializer.ReadObject(XmlDictionaryReader reader, Boolean verifyObjectName)
+   at System.ServiceModel.Dispatcher.DataContractSerializerOperationFormatter.PartInfo.ReadObject(XmlDictionaryReader reader, XmlObjectSerializer serializer)
+   at System.ServiceModel.Dispatcher.DataContractSerializerOperationFormatter.DeserializeParameterPart(XmlDictionaryReader reader, PartInfo part, Boolean isRequest)</StackTrace>
+                  <Type>System.Runtime.Serialization.SerializationException</Type>
+               </InnerException>
+               <Message>The formatter threw an exception while trying to deserialize the message: There was an error while trying to deserialize parameter http://tempuri.org/:transactionTermId. The InnerException message was 'There was an error deserializing the object of type System.Int64. The value '?' cannot be parsed as the type 'Int64'.'.  Please see InnerException for more details.</Message>
+               <StackTrace><![CDATA[at System.ServiceModel.Dispatcher.DataContractSerializerOperationFormatter.DeserializeParameterPart(XmlDictionaryReader reader, PartInfo part, Boolean isRequest)
+   at System.ServiceModel.Dispatcher.DataContractSerializerOperationFormatter.DeserializeParameter(XmlDictionaryReader reader, PartInfo part, Boolean isRequest)
+   at System.ServiceModel.Dispatcher.DataContractSerializerOperationFormatter.DeserializeParameters(XmlDictionaryReader reader, PartInfo[] parts, Object[] parameters, Boolean isRequest)
+   at System.ServiceModel.Dispatcher.DataContractSerializerOperationFormatter.DeserializeBody(XmlDictionaryReader reader, MessageVersion version, String action, MessageDescription messageDescription, Object[] parameters, Boolean isRequest)
+   at System.ServiceModel.Dispatcher.OperationFormatter.DeserializeBodyContents(Message message, Object[] parameters, Boolean isRequest)
+   at System.ServiceModel.Dispatcher.OperationFormatter.DeserializeRequest(Message message, Object[] parameters)
+   at System.ServiceModel.Dispatcher.DispatchOperationRuntime.DeserializeInputs(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.DispatchOperationRuntime.InvokeBegin(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage5(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage41(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage4(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage31(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage3(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage2(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage11(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage1(MessageRpc& rpc)
+   at System.ServiceModel.Dispatcher.MessageRpc.Process(Boolean isOperationContextSet)]]]]>><![CDATA[</StackTrace>
+               <Type>System.ServiceModel.Dispatcher.NetDispatcherFaultException</Type>
+            </ExceptionDetail>
+         </detail>
+      </s:Fault>
+   </s:Body>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetModifiedRefundList TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="GetModifiedRefundList"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpBinding_IsrvRefund</con:interface><con:operation>GetModifiedRefundList</con:operation><con:request name="GetModifiedRefundList"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://srtm.sep.ir/RefundService/srvRefund.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetModifiedRefundList>
+         <!--Optional:-->
+         <tem:userName>?</tem:userName>
+         <!--Optional:-->
+         <tem:password>?</tem:password>
+         <!--Optional:-->
+         <tem:termId>?</tem:termId>
+         <!--Optional:-->
+         <tem:date>?</tem:date>
+      </tem:GetModifiedRefundList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/IsrvRefund/GetModifiedRefundList"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetRefundDetail TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="GetRefundDetail"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpBinding_IsrvRefund</con:interface><con:operation>GetRefundDetail</con:operation><con:request name="GetRefundDetail"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://srtm.sep.ir/RefundService/srvRefund.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetRefundDetail>
+         <!--Optional:-->
+         <tem:userName>?</tem:userName>
+         <!--Optional:-->
+         <tem:password>?</tem:password>
+         <!--Optional:-->
+         <tem:refundId>?</tem:refundId>
+         <!--Optional:-->
+         <tem:termId>?</tem:termId>
+      </tem:GetRefundDetail>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/IsrvRefund/GetRefundDetail"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetRefundStatus TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="GetRefundStatus"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpBinding_IsrvRefund</con:interface><con:operation>GetRefundStatus</con:operation><con:request name="GetRefundStatus"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://srtm.sep.ir/RefundService/srvRefund.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:GetRefundStatus>
+         <!--Optional:-->
+         <tem:userName>?</tem:userName>
+         <!--Optional:-->
+         <tem:password>?</tem:password>
+         <!--Optional:-->
+         <tem:refundId>?</tem:refundId>
+         <!--Optional:-->
+         <tem:termId>?</tem:termId>
+      </tem:GetRefundStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/IsrvRefund/GetRefundStatus"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Refund_Exec TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="Refund_Exec"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpBinding_IsrvRefund</con:interface><con:operation>Refund_Exec</con:operation><con:request name="Refund_Exec"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://srtm.sep.ir/RefundService/srvRefund.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Refund_Exec>
+         <!--Optional:-->
+         <tem:userName>?</tem:userName>
+         <!--Optional:-->
+         <tem:password>?</tem:password>
+         <!--Optional:-->
+         <tem:partialRefundId>?</tem:partialRefundId>
+         <!--Optional:-->
+         <tem:typRefundAction>?</tem:typRefundAction>
+         <!--Optional:-->
+         <tem:termId>?</tem:termId>
+      </tem:Refund_Exec>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/IsrvRefund/Refund_Exec"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Refund_Reg TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="Refund_Reg"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>BasicHttpBinding_IsrvRefund</con:interface><con:operation>Refund_Reg</con:operation><con:request name="Refund_Reg"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://srtm.sep.ir/RefundService/srvRefund.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Refund_Reg>
+         <!--Optional:-->
+         <tem:userName>?</tem:userName>
+         <!--Optional:-->
+         <tem:password>?</tem:password>
+         <!--Optional:-->
+         <tem:refNum>?</tem:refNum>
+         <!--Optional:-->
+         <tem:resNum>?</tem:resNum>
+         <!--Optional:-->
+         <tem:transactionTermId>?</tem:transactionTermId>
+         <!--Optional:-->
+         <tem:refundTermId>?</tem:refundTermId>
+         <!--Optional:-->
+         <tem:amount>?</tem:amount>
+         <!--Optional:-->
+         <tem:requestId>?</tem:requestId>
+         <!--Optional:-->
+         <tem:exeTime>?</tem:exeTime>
+         <!--Optional:-->
+         <tem:email>?</tem:email>
+         <!--Optional:-->
+         <tem:cellNumber>?</tem:cellNumber>
+      </tem:Refund_Reg>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://tempuri.org/IsrvRefund/Refund_Reg"/></con:request></con:config></con:testStep><con:loadTest name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:properties/></con:testSuite><con:mockService port="8080" path="/" host="mehrdadmehralian.local" name="MockService 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="Refund_Reg" interface="BasicHttpBinding_IsrvRefund" operation="Refund_Reg"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:ref="http://schemas.datacontract.org/2004/07/Refund.DTO">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Refund_RegResponse>
+         <!--Optional:-->
+         <tem:Refund_RegResult>
+            <!--Optional:-->
+            <ref:ActionName>?</ref:ActionName>
+            <!--Optional:-->
+            <ref:Description>?</ref:Description>
+            <!--Optional:-->
+            <ref:ErrorCode>?</ref:ErrorCode>
+            <!--Optional:-->
+            <ref:ErrorMessage>?</ref:ErrorMessage>
+            <!--Optional:-->
+            <ref:ReferenceId>?</ref:ReferenceId>
+            <!--Optional:-->
+            <ref:RequestStatus>?</ref:RequestStatus>
+         </tem:Refund_RegResult>
+      </tem:Refund_RegResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IsrvRefund/Refund_Reg"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

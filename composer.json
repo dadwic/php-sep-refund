@@ -1,0 +1,24 @@
+{
+    "name": "mehrdadmehralian/php-sep-refund",
+    "description": "PHP SEP Refund Service JMS metadata",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mehrdad Mehralian",
+            "email": "mehralian_mehrdad@yahoo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+      "php": ">=5.3.0",
+      "goetas-webservices/xsd2php-runtime":"^0.2.2"
+    },
+    "require-dev": {
+      "goetas-webservices/xsd2php":"^0.2"
+    },
+    "autoload": {
+      "psr-0": {
+        "SepRefund": "src/"
+      }
+    }
+}
