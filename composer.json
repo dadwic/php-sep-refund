@@ -10,7 +10,7 @@
       }
     ],
     "type": "library",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
 		"php": ">=5.4",
         "goetas-webservices/xsd2php-runtime":"^0.2.2"
