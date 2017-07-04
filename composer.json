@@ -1,7 +1,7 @@
 {
     "name": "mehrdadmehralian/php-sep-refund",
     "description": "PHP SEP Refund Service JMS metadata",
-    "keywords": ["xml", "xsd", "jms"],
+    "keywords": ["xml", "xsd", "jms", "wsdl"],
     "license": "MIT",
     "authors": [
       {
