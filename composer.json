@@ -20,7 +20,9 @@
     },
 	"autoload": {
         "psr-4": {
-            "Buonzz\\Template\\": "src/"
+            "Sep\\Calculator\\": "src/",
+            "Sep\\IsrvRefund\\": "src/",
+            "Sep\\Serialization\\": "src/"
         }
     },
     "scripts": {
