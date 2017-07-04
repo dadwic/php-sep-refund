@@ -1,4 +1,4 @@
-Calculator\GetDailyRefundListResponse:
+Calculator\Sep\GetDailyRefundListResponse:
     xml_root_name: GetDailyRefundListResponse
     xml_root_namespace: 'http://tempuri.org/'
     properties:
@@ -11,4 +11,4 @@ Calculator\GetDailyRefundListResponse:
             accessor:
                 getter: getGetDailyRefundListResult
                 setter: setGetDailyRefundListResult
-            type: IsrvRefund\ResponseModelType
+            type: IsrvRefund\Sep\ResponseModelType

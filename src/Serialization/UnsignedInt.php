@@ -1,6 +1,6 @@
 <?php
 
-namespace Serialization;
+namespace Serialization\Sep;
 
 /**
  * Class representing UnsignedInt

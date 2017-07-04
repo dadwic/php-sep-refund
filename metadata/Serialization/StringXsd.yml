@@ -1,4 +1,4 @@
-Serialization\StringXsd:
+Serialization\Sep\StringXsd:
     xml_root_name: string
     xml_root_namespace: 'http://schemas.microsoft.com/2003/10/Serialization/'
     properties:

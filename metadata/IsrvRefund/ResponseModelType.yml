@@ -1,4 +1,4 @@
-IsrvRefund\ResponseModelType:
+IsrvRefund\Sep\ResponseModelType:
     properties:
         actionName:
             expose: true

@@ -1,4 +1,4 @@
-Serialization\Boolean:
+Serialization\Sep\Boolean:
     xml_root_name: boolean
     xml_root_namespace: 'http://schemas.microsoft.com/2003/10/Serialization/'
     properties:

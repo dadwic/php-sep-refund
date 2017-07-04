@@ -1,6 +1,6 @@
 <?php
 
-namespace Calculator;
+namespace Calculator\Sep;
 
 /**
  * Class representing GetDailyRefundList

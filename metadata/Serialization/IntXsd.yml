@@ -1,4 +1,4 @@
-Serialization\IntXsd:
+Serialization\Sep\IntXsd:
     xml_root_name: int
     xml_root_namespace: 'http://schemas.microsoft.com/2003/10/Serialization/'
     properties:

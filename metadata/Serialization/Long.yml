@@ -1,4 +1,4 @@
-Serialization\Long:
+Serialization\Sep\Long:
     xml_root_name: long
     xml_root_namespace: 'http://schemas.microsoft.com/2003/10/Serialization/'
     properties:

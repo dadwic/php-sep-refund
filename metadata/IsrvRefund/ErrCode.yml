@@ -1,4 +1,4 @@
-IsrvRefund\ErrCode:
+IsrvRefund\Sep\ErrCode:
     xml_root_name: ErrCode
     xml_root_namespace: 'http://schemas.datacontract.org/2004/07/Refund.DTO'
     properties:

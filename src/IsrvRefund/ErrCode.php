@@ -1,6 +1,6 @@
 <?php
 
-namespace IsrvRefund;
+namespace IsrvRefund\Sep;
 
 /**
  * Class representing ErrCode
