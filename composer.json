@@ -20,9 +20,9 @@
     },
 	"autoload": {
         "psr-4": {
-            "Sep\\Calculator\\": "src/",
-            "Sep\\IsrvRefund\\": "src/",
-            "Sep\\Serialization\\": "src/"
+            "Sep\\Calculator\\": "src/Calculator",
+            "Sep\\IsrvRefund\\": "src/IsrvRefund",
+            "Sep\\Serialization\\": "src/Serialization"
         }
     },
     "scripts": {
