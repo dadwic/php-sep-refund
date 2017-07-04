@@ -1,0 +1,14 @@
+Calculator\GetRefundStatusResponse:
+    xml_root_name: GetRefundStatusResponse
+    xml_root_namespace: 'http://tempuri.org/'
+    properties:
+        getRefundStatusResult:
+            expose: true
+            access_type: public_method
+            serialized_name: GetRefundStatusResult
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getGetRefundStatusResult
+                setter: setGetRefundStatusResult
+            type: IsrvRefund\ResponseModelType

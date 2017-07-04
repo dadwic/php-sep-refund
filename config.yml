@@ -5,10 +5,14 @@
 
 xsd2php:
   namespaces:
-    'http://tempuri.org/': 'SepRefund'
-    'http://schemas.datacontract.org/2004/07/Refund.DTO': 'SepRefund'
-    'http://schemas.microsoft.com/2003/10/Serialization/': 'SepRefund'
+    'http://tempuri.org/': 'Calculator'
+    'http://schemas.datacontract.org/2004/07/Refund.DTO': 'IsrvRefund'
+    'http://schemas.microsoft.com/2003/10/Serialization/': 'Serialization'
   destinations_php:
-    'SepRefund': src
+    'Calculator': src/Calculator
+    'IsrvRefund': src/IsrvRefund
+    'Serialization': src/Serialization
   destinations_jms:
-    'SepRefund': src/metadata
+    'Calculator': metadata/Calculator
+    'IsrvRefund': metadata/IsrvRefund
+    'Serialization': metadata/Serialization

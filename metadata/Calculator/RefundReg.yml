@@ -1,0 +1,114 @@
+Calculator\RefundReg:
+    xml_root_name: Refund_Reg
+    xml_root_namespace: 'http://tempuri.org/'
+    properties:
+        userName:
+            expose: true
+            access_type: public_method
+            serialized_name: userName
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getUserName
+                setter: setUserName
+            type: string
+        password:
+            expose: true
+            access_type: public_method
+            serialized_name: password
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getPassword
+                setter: setPassword
+            type: string
+        refNum:
+            expose: true
+            access_type: public_method
+            serialized_name: refNum
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getRefNum
+                setter: setRefNum
+            type: string
+        resNum:
+            expose: true
+            access_type: public_method
+            serialized_name: resNum
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getResNum
+                setter: setResNum
+            type: string
+        transactionTermId:
+            expose: true
+            access_type: public_method
+            serialized_name: transactionTermId
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getTransactionTermId
+                setter: setTransactionTermId
+            type: integer
+        refundTermId:
+            expose: true
+            access_type: public_method
+            serialized_name: refundTermId
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getRefundTermId
+                setter: setRefundTermId
+            type: integer
+        amount:
+            expose: true
+            access_type: public_method
+            serialized_name: amount
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getAmount
+                setter: setAmount
+            type: integer
+        requestId:
+            expose: true
+            access_type: public_method
+            serialized_name: requestId
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getRequestId
+                setter: setRequestId
+            type: integer
+        exeTime:
+            expose: true
+            access_type: public_method
+            serialized_name: exeTime
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getExeTime
+                setter: setExeTime
+            type: integer
+        email:
+            expose: true
+            access_type: public_method
+            serialized_name: email
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getEmail
+                setter: setEmail
+            type: string
+        cellNumber:
+            expose: true
+            access_type: public_method
+            serialized_name: cellNumber
+            xml_element:
+                namespace: 'http://tempuri.org/'
+            accessor:
+                getter: getCellNumber
+                setter: setCellNumber
+            type: string
