@@ -8,7 +8,6 @@
             "email": "mehralian_mehrdad@yahoo.com"
         }
     ],
-    "minimum-stability": "stable",
     "require": {
       "php": "^5.5|^7.0",
       "goetas-webservices/xsd2php-runtime":"^0.2.2",
