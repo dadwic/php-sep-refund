@@ -2,14 +2,14 @@
     "name": "mehrdadmehralian/php-sep-refund",
     "description": "PHP SEP Refund Service JMS metadata",
     "keywords": ["xml", "xsd", "jms"],
-    "license": "DBAD",
+    "license": "MIT",
     "authors": [
       {
         "name": "Mehrdad Mehralian",
         "email": "mehralian_mehrdad@yahoo.com"
       }
     ],
-    "type": "project",
+    "type": "library",
     "minimum-stability": "stable",
     "require": {
 		"php": ">=5.4",
