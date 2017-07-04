@@ -1,6 +1,6 @@
 <?php
 
-namespace Calculator\Sep;
+namespace Sep\Calculator;
 
 /**
  * Class representing RefundRegResponse
@@ -9,14 +9,14 @@ class RefundRegResponse
 {
 
     /**
-     * @property \IsrvRefund\Sep\ResponseModelType $refundRegResult
+     * @property \Sep\IsrvRefund\ResponseModelType $refundRegResult
      */
     private $refundRegResult = null;
 
     /**
      * Gets as refundRegResult
      *
-     * @return \IsrvRefund\Sep\ResponseModelType
+     * @return \Sep\IsrvRefund\ResponseModelType
      */
     public function getRefundRegResult()
     {
@@ -26,10 +26,10 @@ class RefundRegResponse
     /**
      * Sets a new refundRegResult
      *
-     * @param \IsrvRefund\Sep\ResponseModelType $refundRegResult
+     * @param \Sep\IsrvRefund\ResponseModelType $refundRegResult
      * @return self
      */
-    public function setRefundRegResult(\IsrvRefund\Sep\ResponseModelType $refundRegResult)
+    public function setRefundRegResult(\Sep\IsrvRefund\ResponseModelType $refundRegResult)
     {
         $this->refundRegResult = $refundRegResult;
         return $this;

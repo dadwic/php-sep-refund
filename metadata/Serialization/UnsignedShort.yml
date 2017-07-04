@@ -1,4 +1,4 @@
-Serialization\Sep\UnsignedShort:
+Sep\Serialization\UnsignedShort:
     xml_root_name: unsignedShort
     xml_root_namespace: 'http://schemas.microsoft.com/2003/10/Serialization/'
     properties:

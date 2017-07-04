@@ -1,4 +1,4 @@
-Calculator\Sep\RefundExecResponse:
+Sep\Calculator\RefundExecResponse:
     xml_root_name: Refund_ExecResponse
     xml_root_namespace: 'http://tempuri.org/'
     properties:
@@ -11,4 +11,4 @@ Calculator\Sep\RefundExecResponse:
             accessor:
                 getter: getRefundExecResult
                 setter: setRefundExecResult
-            type: IsrvRefund\Sep\ResponseModelType
+            type: Sep\IsrvRefund\ResponseModelType

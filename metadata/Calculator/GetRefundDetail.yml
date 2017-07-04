@@ -1,4 +1,4 @@
-Calculator\Sep\GetRefundDetail:
+Sep\Calculator\GetRefundDetail:
     xml_root_name: GetRefundDetail
     xml_root_namespace: 'http://tempuri.org/'
     properties:

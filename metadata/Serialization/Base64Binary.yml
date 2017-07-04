@@ -1,4 +1,4 @@
-Serialization\Sep\Base64Binary:
+Sep\Serialization\Base64Binary:
     xml_root_name: base64Binary
     xml_root_namespace: 'http://schemas.microsoft.com/2003/10/Serialization/'
     properties:

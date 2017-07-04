@@ -1,4 +1,4 @@
-Serialization\Sep\Double:
+Sep\Serialization\Double:
     xml_root_name: double
     xml_root_namespace: 'http://schemas.microsoft.com/2003/10/Serialization/'
     properties:

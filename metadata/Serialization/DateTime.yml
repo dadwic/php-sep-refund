@@ -1,4 +1,4 @@
-Serialization\Sep\DateTime:
+Sep\Serialization\DateTime:
     xml_root_name: dateTime
     xml_root_namespace: 'http://schemas.microsoft.com/2003/10/Serialization/'
     properties:

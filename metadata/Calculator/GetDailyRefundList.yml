@@ -1,4 +1,4 @@
-Calculator\Sep\GetDailyRefundList:
+Sep\Calculator\GetDailyRefundList:
     xml_root_name: GetDailyRefundList
     xml_root_namespace: 'http://tempuri.org/'
     properties:

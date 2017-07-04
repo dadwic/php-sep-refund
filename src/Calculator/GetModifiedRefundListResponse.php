@@ -1,6 +1,6 @@
 <?php
 
-namespace Calculator\Sep;
+namespace Sep\Calculator;
 
 /**
  * Class representing GetModifiedRefundListResponse
@@ -9,14 +9,14 @@ class GetModifiedRefundListResponse
 {
 
     /**
-     * @property \IsrvRefund\Sep\ResponseModelType $getModifiedRefundListResult
+     * @property \Sep\IsrvRefund\ResponseModelType $getModifiedRefundListResult
      */
     private $getModifiedRefundListResult = null;
 
     /**
      * Gets as getModifiedRefundListResult
      *
-     * @return \IsrvRefund\Sep\ResponseModelType
+     * @return \Sep\IsrvRefund\ResponseModelType
      */
     public function getGetModifiedRefundListResult()
     {
@@ -26,10 +26,10 @@ class GetModifiedRefundListResponse
     /**
      * Sets a new getModifiedRefundListResult
      *
-     * @param \IsrvRefund\Sep\ResponseModelType $getModifiedRefundListResult
+     * @param \Sep\IsrvRefund\ResponseModelType $getModifiedRefundListResult
      * @return self
      */
-    public function setGetModifiedRefundListResult(\IsrvRefund\Sep\ResponseModelType $getModifiedRefundListResult)
+    public function setGetModifiedRefundListResult(\Sep\IsrvRefund\ResponseModelType $getModifiedRefundListResult)
     {
         $this->getModifiedRefundListResult = $getModifiedRefundListResult;
         return $this;

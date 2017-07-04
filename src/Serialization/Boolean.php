@@ -1,6 +1,6 @@
 <?php
 
-namespace Serialization\Sep;
+namespace Sep\Serialization;
 
 /**
  * Class representing Boolean

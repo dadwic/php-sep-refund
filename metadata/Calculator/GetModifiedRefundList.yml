@@ -1,4 +1,4 @@
-Calculator\Sep\GetModifiedRefundList:
+Sep\Calculator\GetModifiedRefundList:
     xml_root_name: GetModifiedRefundList
     xml_root_namespace: 'http://tempuri.org/'
     properties:

@@ -1,6 +1,6 @@
 <?php
 
-namespace Calculator\Sep;
+namespace Sep\Calculator;
 
 /**
  * Class representing GetModifiedRefundList

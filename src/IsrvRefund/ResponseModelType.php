@@ -1,6 +1,6 @@
 <?php
 
-namespace IsrvRefund\Sep;
+namespace Sep\IsrvRefund;
 
 /**
  * Class representing ResponseModelType

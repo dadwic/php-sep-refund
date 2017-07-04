@@ -1,6 +1,6 @@
 <?php
 
-namespace Calculator\Sep;
+namespace Sep\Calculator;
 
 /**
  * Class representing GetDailyRefundListResponse
@@ -9,14 +9,14 @@ class GetDailyRefundListResponse
 {
 
     /**
-     * @property \IsrvRefund\Sep\ResponseModelType $getDailyRefundListResult
+     * @property \Sep\IsrvRefund\ResponseModelType $getDailyRefundListResult
      */
     private $getDailyRefundListResult = null;
 
     /**
      * Gets as getDailyRefundListResult
      *
-     * @return \IsrvRefund\Sep\ResponseModelType
+     * @return \Sep\IsrvRefund\ResponseModelType
      */
     public function getGetDailyRefundListResult()
     {
@@ -26,10 +26,10 @@ class GetDailyRefundListResponse
     /**
      * Sets a new getDailyRefundListResult
      *
-     * @param \IsrvRefund\Sep\ResponseModelType $getDailyRefundListResult
+     * @param \Sep\IsrvRefund\ResponseModelType $getDailyRefundListResult
      * @return self
      */
-    public function setGetDailyRefundListResult(\IsrvRefund\Sep\ResponseModelType $getDailyRefundListResult)
+    public function setGetDailyRefundListResult(\Sep\IsrvRefund\ResponseModelType $getDailyRefundListResult)
     {
         $this->getDailyRefundListResult = $getDailyRefundListResult;
         return $this;
